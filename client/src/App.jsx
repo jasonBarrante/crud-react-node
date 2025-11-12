@@ -27,7 +27,7 @@ function App() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     const updated = await updateTask(editing.id, editing);
-    setTasks(tasks.map(t => t.id === updated.id ? updated : t));
+    setTasks(tasks.map(t => t.id == updated.id ? updated : t));
     setEditing(null);
   };
 
@@ -40,7 +40,7 @@ function App() {
 
   const toggleDone = async (task) => {
     const updated = await updateTask(task.id, { ...task, done: !task.done });
-    setTasks(tasks.map(t => t.id === updated.id ? updated : t));
+    setTasks(tasks.map(t => t.id == updated.id ? updated : t));
   };
 
   return (
